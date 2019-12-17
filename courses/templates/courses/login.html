@@ -1,0 +1,12 @@
+{% if error %}
+    <p>{{ error }}</p>
+{% else %}
+    <form action="." method="post">
+        {% csrf_token %}
+        username :<input name="username" type="text"><br><br>
+        password :<input name="password" type="password"><br>
+        <input type="submit" value="login">
+    </form>
+{% endif %}
+<br><br><br>
+<a href="{% url 'insta:register' %}">Register</a>

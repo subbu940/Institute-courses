@@ -1,0 +1,11 @@
+<h4>Please Register </h4>
+<form action="." method="post">
+    {% csrf_token %}
+    Name : <input name="first_name" type="text"><br>
+    Email : <input name="email" type="email"><br>
+    Username : <input name="username" type="text"><br>
+    Password :<input name="password" type="password"><br>
+    <input type="submit" value="SAVE">
+</form>
+<br><br><br>
+<a href="{% url 'insta:login' %}">Login</a>

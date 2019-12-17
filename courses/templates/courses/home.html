@@ -1,0 +1,14 @@
+<h1>WELCOME</h1>
+
+{% if student_list %}
+<ul>
+    {% for each in student_list %}
+    <li><a href="{% url 'insta:details' each.id %}"> {{each.first_name}} </a>||||||<a href="{% url 'insta:delete' each.id%}">Delete</a> </li>
+    {% endfor %}
+</ul>
+{% else %}
+No students available
+{% endif %}
+<br><br>
+
+<a href="{% url 'insta:create' %}">Create-Student</a>|||||<a href="{% url 'insta:logout' %}">Logout</a>

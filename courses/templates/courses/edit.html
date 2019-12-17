@@ -1,0 +1,23 @@
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    First-Name : <input type="text" name="first_name" value="{{stu.first_name}}"><br>
+    Last-Name : <input type="text" name="last_name" value="{{stu.last_name}}"><br>
+    Email : <input type="email" name="email" value="{{stu.email}}"><br>
+    Phone : <input type="text" name="phone" value="{{stu.phone}}"><br>
+<!--    DOB : <input type="date" name="dob" value="{{stu.dob}}"><br>-->
+    Tools : <input type="text" name="tools" value="{{stu.tools}}"><br>
+<!--    Image : <input type="file" name="image" value="{{stu.image}}"><br>-->
+    Courses :
+    <select name="course">
+        <option value="">{{stu.course}}</option>
+        {% for c in course_list %}
+        <option value="{{c.course_name}}" >{{c.course_name}}</option>
+        {% endfor %}
+    </select>
+    <br>
+<!--    {% if student.course.pk == c.id %} selected {% endif %}-->
+
+    <input type="submit" value="SAVE">
+</form>
+<a href="{% url 'insta:details' stu.id %}">Back</a>|||||
+<a href="{% url 'insta:logout' %}">Logout</a>

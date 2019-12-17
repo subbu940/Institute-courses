@@ -1,0 +1,15 @@
+<h3>Details For {{student.first_name}}</h3><br><br>
+First_Name : {{ student.first_name}}<br>
+Last_Name : {{ student.last_name}}<br>
+Email : {{ student.email }}<br>
+Phone : {{ student.phone }}<br>
+DOB : {{ student.dob }}<br>
+Course : {{ student.course }}<br>
+Tools : {{ student.tools }}<br>
+Created_at : {{ student.created_at }}<br>
+Modified_at : {{ student.modified_at }}<br>
+Image : <br><img src="/media/{{ student.image }}" alt="No image" width="300" height="150"><br><br><br>
+
+<a href="{% url 'insta:edit' student.id %}">Edit</a>
+<br><br><br>
+<a href="{% url 'insta:home' %}">Back</a> ||||| <a href="{% url 'insta:logout' %}">Logout</a>
